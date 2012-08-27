@@ -9,9 +9,9 @@ background information in related blog posts:
 * http://nelenkov.blogspot.com/2012/08/android-secure-element-execution.html
 * http://nelenkov.blogspot.com/2012/08/exploring-google-wallet-using-secure.html
 
-** WARNING **
+**WARNING**
 
-While this program doesn't try to modify the SE and doesn't containt any 
+While this program doesn't try to modify the SE and doesn't contain any 
 'dangerous' SE commands, using and/or modifying it may lock (brick) the secure 
 element on your phone. Make sure you know what you are doing and use at your 
 own risk!
