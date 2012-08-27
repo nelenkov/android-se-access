@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">SE Access</string>
+    <string name="main_message">Make sure nfcee_access.xml is modified and use buttons to get SE/Wallet info.</string>
+    <string name="title_activity_main">@string/app_name</string>
+
+</resources>

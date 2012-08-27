@@ -1,0 +1,49 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.nick.nfc.seaccess"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.NFC" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!--
+        we don't really care about the UI, using quick-n-dirty 
+        configChagnes to avoid activity recreation        -->
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="org.nick.nfc.seaccess.SEReceiver" >
+            <intent-filter>
+                <action android:name="com.android.nfc_extras.action.AID_SELECTED" />
+                <action android:name="com.android.nfc_extras.action.APDU_RECEIVED" />
+                <action android:name="com.android.nfc_extras.action.MIFARE_ACCESS_DETECTED" />
+                <action android:name="android.intent.action.MASTER_CLEAR_NOTIFICATION" />
+                <action android:name="com.android.nfc_extras.action.RF_FIELD_ON_DETECTED" />
+                <action android:name="com.android.nfc_extras.action.RF_FIELD_OFF_DETECTED" />
+                <action android:name="com.android.nfc_extras.action.EMV_CARD_REMOVAL" />
+                <action android:name="com.android.nfc.action.INTERNAL_TARGET_DESELECTED" />
+            </intent-filter>
+        </receiver>
+
+        <uses-library
+            android:name="com.android.nfc_extras"
+            android:required="true" />
+    </application>
+
+</manifest>
